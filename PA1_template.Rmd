@@ -28,7 +28,7 @@ medianSteps<- median(dailyActivity$steps, na.rm=T)
 ```
 
 #####1B.  Histogram of the total number of steps taken each day
-```{r}
+```{r histogram-part1}
 #Histogram of the total number of steps taken each day
 hist(dailyActivity$steps, breaks=20,xlab="Total number of steps per day", main="Figure 1", col="light green")
 abline(v=meanSteps, col = c("red"))
@@ -48,7 +48,7 @@ maxInterval <- adai[adai$steps==maxSteps,1]
 
 #####1C. Time Series Plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
-```{r}
+```{r timeseries}
 plot(adai$interval,adai$steps, main="Figure 2",xlab="Interval",ylab="Average number of steps per interval", type="l", lwd=2, col="blue")
 abline(h=maxSteps, col = c("red"))
 abline(v=maxInterval, col = c("green"))
@@ -102,7 +102,7 @@ newMedianSteps<- median(newDailyActivity$steps)
 ```
 
 ######4.1D.  Histogram of the total number of steps taken each day with missing values filled
-```{r}
+```{r histogram-part2}
 #Histogram of the total number of steps taken each day
 hist(newDailyActivity$steps, breaks=20,xlab="Total number of steps per day", main=NULL, col="light green")
 abline(v=newMeanSteps, col = c("red"))
@@ -150,7 +150,7 @@ print(xtable(t1), type="html")
 
 ##E. Are there differences in activity patterns between weekdays and weekends?
 
-```{r}
+```{r timeseries-byDay}
 weekend <-  c("Sunday", "Saturday")
 dData$day <- weekdays(as.Date(dData$date))
 dFactor <- levels(factor(dData$day))

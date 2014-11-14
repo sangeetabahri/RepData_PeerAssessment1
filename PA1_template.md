@@ -71,7 +71,7 @@ abline(v=medianSteps, col = c("yellow"), lty = 2)
 legend(x="topright", legend=c("mean","median"), col=c("red","yellow"), bty="n", lwd=3)
 ```
 
-![plot of chunk unnamed-chunk-3](./PA1_template_files/figure-html/unnamed-chunk-3.png) 
+![plot of chunk histogram-part1](./PA1_template_files/figure-html/histogram-part1.png) 
 
 #####2B. The mean and median number of steps taken per day are 10766 and 10765
 
@@ -93,7 +93,7 @@ abline(h=maxSteps, col = c("red"))
 abline(v=maxInterval, col = c("green"))
 ```
 
-![plot of chunk unnamed-chunk-5](./PA1_template_files/figure-html/unnamed-chunk-5.png) 
+![plot of chunk timeseries](./PA1_template_files/figure-html/timeseries.png) 
 
 #####2C. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -154,7 +154,7 @@ abline(v=newMedianSteps, col = c("yellow"), lty = 2)
 legend(x="topright", legend=c("mean","median"), col=c("red","yellow"), bty="n", lwd=3)
 ```
 
-![plot of chunk unnamed-chunk-9](./PA1_template_files/figure-html/unnamed-chunk-9.png) 
+![plot of chunk histogram-part2](./PA1_template_files/figure-html/histogram-part2.png) 
 
 ######4.2D. The new mean and median number of steps taken per day are 10766 and 10766
 
@@ -181,7 +181,7 @@ print(xtable(table1), type="html")
 ```
 
 <!-- html table generated in R 3.1.1 by xtable 1.7-4 package -->
-<!-- Fri Nov 14 15:01:10 2014 -->
+<!-- Fri Nov 14 15:12:37 2014 -->
 <table border=1>
 <tr> <th>  </th> <th> Type </th> <th> First Part </th> <th> Second Part </th>  </tr>
   <tr> <td align="right"> 1 </td> <td> mean </td> <td> 10766.1886792453 </td> <td> 10766.1886792453 </td> </tr>
@@ -212,7 +212,7 @@ print(xtable(t1), type="html")
 ```
 
 <!-- html table generated in R 3.1.1 by xtable 1.7-4 package -->
-<!-- Fri Nov 14 15:01:10 2014 -->
+<!-- Fri Nov 14 15:12:37 2014 -->
 <table border=1>
 <tr> <th>  </th> <th> Date </th> <th> First Part </th> <th> Second Part </th>  </tr>
   <tr> <td align="right"> 1 </td> <td> 2012-10-01 </td> <td align="right">  </td> <td align="right"> 10766.19 </td> </tr>
@@ -297,7 +297,7 @@ library(ggplot2)
 ggplot(data=asiw, aes(x=interval, y=steps, group=week))+ ggtitle("Activity Patterns Weekday vs Weekends over 5 minutes intervals") + geom_line(aes(color=week))+ facet_wrap(~ week, nrow=2)
 ```
 
-![plot of chunk unnamed-chunk-13](./PA1_template_files/figure-html/unnamed-chunk-13.png) 
+![plot of chunk timeseries-byDay](./PA1_template_files/figure-html/timeseries-byDay.png) 
 
 We can observe from the above plot that the activity on the weekdays has the greatest peak from all steps intervals, but we can also observe weekends activities have more peaks over a hundred than weekdays. This could be attributed to the fact that activities on the weekdays mostly follow a work related routine, where we can see some intense activities in a small amount of time which employ can spare some time for. Over the weekend we see a better distribution of efforts along the time. During the weekend it is some what stays in a range which is not too wide as compare to weekdays range.
 
